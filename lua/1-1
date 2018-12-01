@@ -1,0 +1,9 @@
+#!/usr/bin/lua
+
+local total = 0
+
+for line in io.lines() do
+	total = total + tonumber(line)
+end
+
+print(total)

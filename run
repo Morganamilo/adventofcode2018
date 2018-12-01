@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -n "$z" ]; then
+	echo "usage: ./run <lang> <day>"
+	echo "example: ./run rust 1-1"
+	exit 1
+fi
+
+./$1/$2 < in/${2%-*}

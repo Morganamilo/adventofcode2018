@@ -1,0 +1,5 @@
+#!/bin/bash
+cd rust
+for file in *.rs; do
+	rustc $file
+done
