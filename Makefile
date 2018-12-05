@@ -12,6 +12,9 @@ run-%-1: src/%-1
 run-%-2: src/%-2
 	./$< < in/$(@:run-%-2=%)
 
+run-stdin-%: src/%
+	./$<
+
 clean:
 	find src/ -type f  ! -name "*.*"  -delete
 
