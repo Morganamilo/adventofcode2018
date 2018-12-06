@@ -1,10 +1,11 @@
 SRC = $(wildcard src/*.rs)
 BIN = $(SRC:.rs=)
+OPTLEVEL=3
 
 build: $(BIN)
 
 %: %.rs
-	rustc $< -o $@
+	rustc $< -C opt-level=$(OPTLEVEL) -o $@
 
 run-%-1: src/%-1
 	./$< < in/$(@:run-%-1=%)
