@@ -1,6 +1,6 @@
 SRC = $(wildcard src/*.rs)
 BIN = $(SRC:.rs=)
-OPTLEVEL=3
+OPTLEVEL=0
 
 build: $(BIN)
 
