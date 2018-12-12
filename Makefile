@@ -5,7 +5,7 @@ OPTLEVEL=0
 build: $(BIN)
 
 %: %.rs
-	rustc $< -C opt-level=$(OPTLEVEL) -o $@
+	rustc $< -g -C opt-level=$(OPTLEVEL) -o $@
 
 run-%-1: src/%-1
 	./$< < in/$(@:run-%-1=%)
