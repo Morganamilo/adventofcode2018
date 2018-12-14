@@ -194,23 +194,23 @@ fn main() {
     let mut points = map.iter().collect::<Vec<_>>();
     points.sort_by_key(|p| p.0);
     for point in points {
-        println!("{:?}", point);
+        //println!("{:?}", point);
     }
 
     for cart in carts.iter() {
-        println!("{:?}", cart);
+        //println!("{:?}", cart);
     }
 
 
     //print_map(&map, &carts);
     carts.sort();
     for n in 0.. {
-        println!("tick: {} {}", n, carts.len());
         let mut colision = tick(&map, &mut carts);
         colision.sort();
         colision.dedup();
         for i in colision.into_iter().rev() {
-            carts.remove(i);
+            let c = carts.remove(i);
+            //println!("Tick {:5} Removing {},{}", n, c.pos.x, c.pos.y);
             if carts.len() == 1 {
                 println!("{},{}", carts[0].pos.x, carts[0].pos.y);
                 return;
