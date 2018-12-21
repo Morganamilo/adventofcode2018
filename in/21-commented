@@ -1,0 +1,32 @@
+#ip 2
+00 seti 123		0		3 // reg[3] = 123
+01 bani 3		456		3 // reg[3] |= 456
+02 eqri 3		72		3 // reg[3] == 72 { goto 5 } else { goto 4 }
+03 addr 3		2		2 // 
+04 seti 0		0		2 // goto 1
+05 seti 0		0		3 // reg[3] = 0
+06 bori 3		65536		4 // reg[4] = reg[3] | 65536
+07 seti 10649702	3		3 // reg[3] = 10649702
+08 bani 4		255		5 // reg[5] = reg[4] & 255
+09 addr 3		5		3 // reg[3] += reg[5]
+10 bani 3		16777215	3 // reg[3] &= 16777215
+11 muli 3		65899		3 // reg[3] *= 65899
+12 bani 3		16777215	3 // reg[3] &= 16777215
+13 gtir 256		4		5 // if 256 > reg[4] { goto 16 } else { goto 15}
+14 addr 5		2		2
+15 addi 2		1		2 // goto 17
+16 seti 27		7		2 // goto 28
+17 seti 0		6		5 // reg[5] = 0
+18 addi 5		1		1 // reg[1] = reg[5] + 1
+19 muli 1		256		1 // reg[1] *= 256
+20 gtrr 1		4		1 // if reg[1] > reg[4] { goto 23 } else { goto 22 }
+21 addr 1		2		2
+22 addi 2		1		2 // goto 24
+23 seti 25		9		2 // goto 26
+24 addi 5		1		5 // reg[5] += 1
+25 seti 17		9		2 // goto 18
+26 setr 5		7		4 // reg[4] = reg[5]
+27 seti 7		1		2 // goto 8
+28 eqrr 3		0		5 // if reg[3] == reg[0] { halt } else { goto 6 }
+29 addr 5		2		2
+30 seti 5		4		2
