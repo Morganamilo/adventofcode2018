@@ -78,7 +78,7 @@ fn main() {
         }
     }
 
-    while ip < insts.len() {
+    while reg.ip < insts.len() {
         reg.registers[reg.ip] = ip;
         execute(&insts[reg.registers[reg.ip]], &mut reg);
         ip = reg.registers[reg.ip] + 1;
